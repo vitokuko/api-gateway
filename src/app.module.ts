@@ -1,10 +1,22 @@
+import { ApolloGatewayDriverConfig, ApolloGatewayDriver } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { GraphQLModule } from '@nestjs/graphql';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    GraphQLModule.forRoot<ApolloGatewayDriverConfig>({
+      driver: ApolloGatewayDriver,
+      gateway: {
+        serviceList: [
+          {
+            name: 'users',
+            url: 'http://localhost:4005/graphql',
+          },
+        ],
+      },
+    }),
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
