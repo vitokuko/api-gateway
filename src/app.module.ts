@@ -1,6 +1,7 @@
 import { ApolloGatewayDriverConfig, ApolloGatewayDriver } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import { SERVICE_USER_NAME, SERVICE_USER_URL } from './environments';
 
 @Module({
   imports: [
@@ -9,8 +10,8 @@ import { GraphQLModule } from '@nestjs/graphql';
       gateway: {
         serviceList: [
           {
-            name: 'users',
-            url: 'http://localhost:4005/graphql',
+            name: SERVICE_USER_NAME,
+            url: SERVICE_USER_URL,
           },
         ],
       },
