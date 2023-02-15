@@ -13,6 +13,9 @@ const SERVICE_PREFIX: string = process.env.SERVICE_PREFIX;
 const SERVICE_USER_NAME: string = process.env.SERVICE_USER_NAME;
 const SERVICE_USER_URL: string = process.env.SERVICE_USER_URL;
 
+// JWT
+const SECRET_TOKEN_KEY: string = process.env.SECRET_TOKEN_KEY;
+
 export {
   NODE_ENV,
   DOMAIN,
@@ -20,4 +23,5 @@ export {
   SERVICE_PREFIX,
   SERVICE_USER_NAME,
   SERVICE_USER_URL,
+  SECRET_TOKEN_KEY,
 };
